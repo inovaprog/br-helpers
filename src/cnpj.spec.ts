@@ -68,13 +68,13 @@ describe('Cnpj', () => {
   });
 
   it('valid alphanumeric CNPJ', () => {
-    const validAlphanumericCNPJ = '12A4567800019B';
-    expect(Cnpj.isValid(validAlphanumericCNPJ)).toBe(false);
+    const invalidAlphanumericCNPJ = '12A4567800019B';
+    expect(Cnpj.isValid(invalidAlphanumericCNPJ)).toBe(false);
   });
 
   it('invalid alphanumeric CNPJ', () => {
-    const invalidAlphanumericCNPJ = '12ABC34501DE35';
-    expect(Cnpj.isValid(invalidAlphanumericCNPJ)).toBe(true);
+    const validAlphanumericCNPJ = '12ABC34501DE35';
+    expect(Cnpj.isValid(validAlphanumericCNPJ)).toBe(true);
   });
 
   it('valid alphanumeric CNPJ with special characters', () => {

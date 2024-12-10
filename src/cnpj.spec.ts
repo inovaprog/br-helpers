@@ -66,4 +66,19 @@ describe('Cnpj', () => {
   it('Should return true to a valid CNPJ with second checker 2 >= 1', () => {
     expect(Cnpj.isValid('53.638.687/0001-51')).toBeTruthy();
   });
+
+  it('valid alphanumeric CNPJ', () => {
+    const validAlphanumericCNPJ = '12A4567800019B';
+    expect(Cnpj.isValid(validAlphanumericCNPJ)).toBe(false);
+  });
+
+  it('invalid alphanumeric CNPJ', () => {
+    const invalidAlphanumericCNPJ = '12ABC34501DE35';
+    expect(Cnpj.isValid(invalidAlphanumericCNPJ)).toBe(true);
+  });
+
+  it('valid alphanumeric CNPJ with special characters', () => {
+    const validAlphanumericCNPJWithSpecialChars = '12.ABC.345/01DE-35';
+    expect(Cnpj.isValid(validAlphanumericCNPJWithSpecialChars)).toBe(true);
+  });
 });

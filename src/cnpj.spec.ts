@@ -73,8 +73,8 @@ describe('Cnpj', () => {
   });
 
   it('invalid alphanumeric CNPJ', () => {
-    const invalidAlphanumericCNPJ = '12ABC34501DE35';
-    expect(Cnpj.isValid(invalidAlphanumericCNPJ)).toBe(true);
+    const validAlphanumericCNPJ = '12ABC34501DE35';
+    expect(Cnpj.isValid(validAlphanumericCNPJ)).toBe(true);
   });
 
   it('valid alphanumeric CNPJ with special characters', () => {

@@ -22,7 +22,8 @@ export class CpfAndCnpj {
     const weight = this.#getCheckerWeights(digitsLength);
     return digits.split('').reduce((acc, digit, idx) => {
       const offsetValue = weight - idx >= 2 ? 0 : 8;
-      return acc + +digit * (weight + offsetValue - idx);
+      const digitValue = digit.charCodeAt(0) - 48;
+      return acc + digitValue * (weight + offsetValue - idx);
     }, 0);
   }
   static #getCheckerWeights(len: number): number {

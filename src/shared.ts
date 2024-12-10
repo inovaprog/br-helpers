@@ -1,5 +1,5 @@
 export function getOnlyNumbersFromString(digits: string): string {
-  return String(digits).replace(/\D/g, '');
+  return digits.replace(/[^A-Z0-9]/g, '');
 }
 
 export function format(digits: string, symbols: Array<[position: number, symbol: string]>): string {
@@ -13,5 +13,5 @@ export function format(digits: string, symbols: Array<[position: number, symbol:
   }, '');
 }
 export function isValidValue(value: string): boolean {
-  return !!value || typeof value === 'string';
+  return !!value && typeof value === 'string';
 }
